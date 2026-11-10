@@ -947,4 +947,14 @@ bulkActionsR=function(k,del){const ids=[...document.querySelectorAll(`.bulk-sele
 render();
 })();
 </script>
+
+<script>
+fetch('dados.json?v=' + Date.now()) // o ?v= evita cache antigo
+  .then(r => r.json())
+  .then(dados => {
+    // use "dados" para montar a página
+    console.log(dados);
+  })
+  .catch(err => console.error('Erro ao carregar o JSON:', err));
+</script>
 </body></html>
